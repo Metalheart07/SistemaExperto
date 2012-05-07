@@ -14,11 +14,12 @@ public class SistemaExpertoTDAHI {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        char entrada='0';
+        char entrada;
+        //entrada=new char[13];
         motor m=new motor();
+        
         entrada=m.leer();
-        System.out.println("Cadena: "+entrada);
-         
+        
         // TODO code application logic here
     }
 }

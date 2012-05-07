@@ -11,9 +11,10 @@ import java.io.*;
  * @author Megadeth
  */
 public class motor {
-    char leer(){
-    char cadena[];
-    cadena=new char[13];
+    
+   char leer(){
+      char cadena[];
+      cadena=new char[14];
       File archivo = null;
       FileReader fr = null;
       BufferedReader br = null;
@@ -26,15 +27,18 @@ public class motor {
          // Lectura del fichero
          String linea;
          while((linea=br.readLine())!=null)
-             for(int i=0;i<14;i++)
+             
+             for(int i=0;i<=14;i++)
              {
+                 
                  String lineachar=String.valueOf(linea);
-                 System.out.println("lieneachar "+lineachar.charAt(i));
+                 //System.out.println("lieneachar "+lineachar.charAt(i));
                  cadena[i]=lineachar.charAt(i);
-                 System.out.println("cadena arreglo "+cadena[i]);
+                 System.out.println("cadena arreglo "+cadena[i]+"   "+i);
+                 
                  
              }
-            System.out.println(linea);
+            
       }
       catch(Exception e1){
          e1.printStackTrace();
@@ -50,7 +54,7 @@ public class motor {
             e2.printStackTrace();
          }
       }
-      return cadena[0];//en el arreglo "cadena" estan las entradas
+       return cadena[0];//en el arreglo "cadena" estan las entradas
    }
     
 }
