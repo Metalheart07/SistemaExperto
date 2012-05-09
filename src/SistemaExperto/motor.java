@@ -57,7 +57,8 @@ public class motor {
        //return cadena[0];//en el arreglo "cadena" estan las entradas
    }
    
-   double calcular_membresia(char x, int m)//se calcula el grado de pertenencia a un conjunto
+   double calcular_membresia(char x, int m)//Fuzzyficacion
+   //se calcula el grado de pertenencia a un conjunto
    {
        
        int k=2;//m: media de la funcion de membresia(Gaussiana) k: constante
@@ -67,6 +68,17 @@ public class motor {
        miu=Math.pow(e, potencia);
        return miu;
    
-   }
+   }//se obtienen entradas difusas
+   
+   void proceso_de_inferencia()//Se evaluan las reglas (de la BC)
+   { 
+
+   }//se obtienen salidas difusas
+   
+   void defusificacion() //Defuzzyficacion
+   //Metodo del centroide
+   {
+   
+   }//Se obtienen salidas reales
     
 }
