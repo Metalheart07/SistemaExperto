@@ -18,7 +18,7 @@ public class SistemaExpertoTDAHI {
         //entrada=new char[13];
         motor m=new motor();
         
-        entrada=m.leer();
+        m.leer();
         
         // TODO code application logic here
     }
