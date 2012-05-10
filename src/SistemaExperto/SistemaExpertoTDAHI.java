@@ -14,12 +14,15 @@ public class SistemaExpertoTDAHI {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        char entrada;
-        //entrada=new char[13];
-        motor m=new motor();
+        int x;
+        float media=(float) 4.0, miu;
+         //entrada=new char[13];
+        control_de_coherencia m=new control_de_coherencia();
         
-        m.leer();
+       
+        x=m.validar_de_entradas();
         
+       
         // TODO code application logic here
     }
 }

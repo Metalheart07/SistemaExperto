@@ -11,10 +11,12 @@ import java.io.*;
  * @author Megadeth
  */
 public class motor {
-    
+   
+   public int entrada1[][], cadenaint[];
+   public float pertenencia[];
    void leer(){
       char cadena[];
-      cadena=new char[8];
+      cadena=new char[9];
       File archivo = null;
       FileReader fr = null;
       BufferedReader br = null;
@@ -34,7 +36,7 @@ public class motor {
                  String lineachar=String.valueOf(linea);
                  //System.out.println("lieneachar "+lineachar.charAt(i));
                  cadena[i]=lineachar.charAt(i);
-                 System.out.println("cadena arreglo "+cadena[i]+"   "+i);
+                //System.out.println("cadena arreglo "+cadena[i]+"   "+i);
                  
                  
              }
@@ -54,22 +56,34 @@ public class motor {
             e2.printStackTrace();
          }
       }
-       //return cadena[0];//en el arreglo "cadena" estan las entradas
-   }
+     cadenaint=new int[9];//convertir cadena de caracteres a enteros
+     for(int i=0;i<=8;i++){ 
+      cadenaint[i]=Integer.parseInt(""+cadena[i]);//return cadena[0];//en el arreglo "cadena" estan las entradas
+         //System.out.println("Cadena de enteros "+ cadenaint[i]+ "   "+i);
+     }
+     
+     }
    
-   double calcular_membresia(char x, int m)//Fuzzyficacion
+   
+   
+   float calcular_membresia(int x, float m)//Fuzzyficacion
    //se calcula el grado de pertenencia a un conjunto
    {
        
-       int k=2;//m: media de la funcion de membresia(Gaussiana) k: constante
-       double e=271828182,potencia,miu;
+       //m: media de la funcion de membresia(Gaussiana) k: constante
+       float potencia, miu, k=(float) 1.5;
+       float arriba=x-m;
+       arriba=(float) Math.pow(arriba,2);
+       k=k*-1;
+       potencia=(float) arriba*k;//funcion de membresia
+       //System.out.println("Potencia "+potencia);
        
-       potencia=((Math.pow((x-m),2))*k)*-1;//funcion de membresia
-       miu=Math.pow(e, potencia);
+       miu=(float) (double) Math.exp(potencia);
+       //System.out.println("Miu "+miu);
        return miu;
    
    }//se obtienen entradas difusas
-   
+  
    void proceso_de_inferencia()//Se evaluan las reglas (de la BC)
    { 
 
