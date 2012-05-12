@@ -14,7 +14,7 @@ public class SistemaExpertoTDAHI {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int x;
+        float x;
         float media=(float) 4.0, miu;
          //entrada=new char[13];
         control_de_coherencia m=new control_de_coherencia();

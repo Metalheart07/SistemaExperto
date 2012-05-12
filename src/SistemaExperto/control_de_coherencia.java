@@ -12,13 +12,14 @@ public class control_de_coherencia {
     motor mt=new motor();  
     
       
-     int validar_de_entradas()//se evaluan las entradas reales
+     float validar_de_entradas()//se evaluan las entradas reales
     {
        mt.leer();
        int  x1,x2,x3,x4,x5,x6;
        float media, miu;
-       mt.pertenencia=new float[6];
+       mt.entradasdifusas=new float[2][6];
        mt.entrada1=new int[2][6];
+    
        //Calcular entradas de TDH-L
        x1=mt.cadenaint[0]&mt.cadenaint[1];
        x2=mt.cadenaint[0]&mt.cadenaint[2];     
@@ -153,22 +154,28 @@ public class control_de_coherencia {
        
        
            
-        for(int i=0; i<=1;i++){  
-            media=(float) 4.0;
-           for(int j=0; j<=5;j++){
-               
+       
+            
+         for(int i=0; i<=1;i++){ //controla el arreglo que se evaluara
+             
+           for(int j=0; j<=5;j++){// controla el elemento que se evaluara
+               media=(float) 4.0;
+               for(int c=0; c<=5;c++){  //controla los conjuntos 
                 miu=mt.calcular_membresia(mt.entrada1[i][j], media);
                 int numerodeconjunto=j+1;
                 //System.out.println("La entrada es "+miu+" perteneciente al conjunto "+ numerodeconjunto);
-                mt.pertenencia[j]=miu;
-                System.out.println("Pertenencia "+numerodeconjunto+"  "+miu);
+                mt.entradasdifusas[i][j]=miu;
+                //System.out.println("Pertenencia "+numerodeconjunto+"  "+miu);
+                //System.out.println("Media: "+media);
                 media=(float) (media+4.0); 
-           }   
-           }
-        
+                
+           } 
+         }
+        }
+        mt.proceso_de_inferencia();
       
       
-       return mt.entrada1[0][0];
+       return mt.entradasdifusas[0][0];
     }
     
 }
