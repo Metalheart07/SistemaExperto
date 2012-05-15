@@ -11,7 +11,8 @@ import java.io.*;
  * @author Megadeth
  */
 public class motor {
-   
+   public char actual=' ';
+   public float w=0;
    public int entrada1[][], cadenaint[];
    public float entradasdifusas[][], pertenece[];
    void leer(){
@@ -94,7 +95,7 @@ public class motor {
        pertenece=new float[4];
       
       
-      char actual=' ';
+     
       //cadenainf=new char[9];
       File archivo1=null ;
       FileReader fr1 = null;
@@ -185,7 +186,8 @@ public class motor {
             {
                // System.out.println("Entrada difusa a evaluar: "+entradasdifusas[i]);
                 pertenece[c-1]=this.calcular_membresia(entradasdifusas[i][j], media);
-            
+                
+               
               // System.out.println("La salida difusa "+i+" pertenece: "+pertenece[c-1]+" al conjunto n"+c);
                 media=(float) (media+4.0);
             }
@@ -194,6 +196,10 @@ public class motor {
           for(int c=1; c<5; c++)
               System.out.println("Pertenencia a FAM: "+pertenece[c-1]);
           
+          String s=String.valueOf(actual);    
+           w=Float.parseFloat(s);
+           w=this.calcular_membresia(w, 12);
+          
          
    }//se obtienen salidas difusas
    
@@ -201,7 +207,16 @@ public class motor {
    //Defuzzyficacion
    //Metodo del centroide
    {
-   
+       float sumatoria1=0, sumatoria2=0,salidareal;
+       
+       for(int i=0;i<=3; i++){//sumatorias para el metodo
+          
+                     sumatoria1=sumatoria1+(pertenece[i]*entradasdifusas[0][i]);
+                     sumatoria2=sumatoria2+pertenece[i]; 
+             
+       }
+       salidareal=sumatoria1/sumatoria2;
+     
    }//Se obtienen salidas reales
 }
 }
