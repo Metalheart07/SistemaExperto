@@ -89,7 +89,7 @@ public class motor {
            return (char)dato;
         }
   
-   void proceso_de_inferencia()//Se evaluan las reglas (de la BC)
+   int proceso_de_inferencia()//Se evaluan las reglas (de la BC)
    { 
        float media;
        pertenece=new float[4];
@@ -111,6 +111,7 @@ public class motor {
          String linea2;
          int cont=0, band=0;
          String lineachar2;
+         int accion;
          //char c1=' ', c2=' ';
          int inferir[]=new int[6];
         
@@ -140,7 +141,7 @@ public class motor {
                                                      if(lineachar2.charAt(cont+3)=='>'){
                                                             actual=lineachar2.charAt(cont+4);
                                                             System.out.println("Accion "+ actual);
-                                                          
+                                                            
                                                             band=1;
                                                           }
                                                }  
@@ -193,14 +194,15 @@ public class motor {
             }
         }
       }
-          for(int c=1; c<5; c++)
-              System.out.println("Pertenencia a FAM: "+pertenece[c-1]);
+          //for(int c=1; c<5; c++)
+             // System.out.println("Pertenencia a FAM: "+pertenece[c-1]);
           
           String s=String.valueOf(actual);    
            w=Float.parseFloat(s);
+        int accion = (int) w;
            w=this.calcular_membresia(w, 12);
-          
-         
+           
+          return accion;
    }//se obtienen salidas difusas
    
    void defusificacion(){

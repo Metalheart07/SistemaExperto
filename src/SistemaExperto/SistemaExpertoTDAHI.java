@@ -4,6 +4,8 @@
  */
 package SistemaExperto;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Megadeth
@@ -17,10 +19,11 @@ public class SistemaExpertoTDAHI {
         float x;
         float media=(float) 4.0, miu;
          //entrada=new char[13];
-        control_de_coherencia m=new control_de_coherencia();
-        
-       
-        x=m.validar_de_entradas();
+        JOptionPane.showMessageDialog(null, "Bienvenido al Sistema Experto para determinar el TDAHI");
+        Opcion op = new Opcion();
+        op.setVisible(true);
+        //control_de_coherencia m=new control_de_coherencia();
+        //x=m.validar_de_entradas();
         
        
         // TODO code application logic here

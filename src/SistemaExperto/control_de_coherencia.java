@@ -172,11 +172,10 @@ public class control_de_coherencia {
            } 
          }
         }
-        mt.proceso_de_inferencia();
+        int accion=mt.proceso_de_inferencia();
         mt.defusificacion();
-      
-      
-       return mt.entradasdifusas[0][0];
+        
+       return accion;
     }
     
 }
