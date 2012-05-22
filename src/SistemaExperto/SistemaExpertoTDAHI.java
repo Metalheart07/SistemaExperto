@@ -15,12 +15,13 @@ public class SistemaExpertoTDAHI {
     /**
      * @param args the command line arguments
      */
+  public static  Opcion op = new Opcion();
     public static void main(String[] args) {
         float x;
         float media=(float) 4.0, miu;
          //entrada=new char[13];
         JOptionPane.showMessageDialog(null, "Bienvenido al Sistema Experto para determinar el TDAHI");
-        Opcion op = new Opcion();
+        
         op.setVisible(true);
         //control_de_coherencia m=new control_de_coherencia();
         //x=m.validar_de_entradas();

@@ -15,9 +15,21 @@ public class motor {
    public float w=0;
    public int entrada1[][], cadenaint[];
    public float entradasdifusas[][], pertenece[];
+   
    void leer(){
-      char cadena[];
-      cadena=new char[9];
+      double sintoma1[];
+      sintoma1=new double[6];
+      
+      
+      for(int i=0; i<6;i++){
+          
+          sintoma1[i]= SistemaExperto.Opcion.recuperar(i);//recuperamos el primer sintoma para procesarlo
+     
+          
+      
+      }
+      
+       /** Con Archivos de texto///////////////////////////////////////////////////////////
       File archivo = null;
       FileReader fr = null;
       BufferedReader br = null;
@@ -61,7 +73,7 @@ public class motor {
      for(int i=0;i<=8;i++){ 
       cadenaint[i]=Integer.parseInt(""+cadena[i]);//return cadena[0];//en el arreglo "cadena" estan las entradas
          //System.out.println("Cadena de enteros "+ cadenaint[i]+ "   "+i);
-     }
+     }*/
      
      }
    
